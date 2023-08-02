@@ -7,7 +7,7 @@ import { createMesh } from "./create-mesh";
 import { createPlaneGeometry } from "./create-geometry";
 import { material, applyAllTexture } from "./create-material";
 import { PLANE_WIDTH_SEGMENTS, PLANE_HEIGHT_SEGMENTS } from "./config";
-
+import { getPathParams } from "./url-parser";
 /**
  * Canvas
  */
@@ -21,9 +21,11 @@ const scene = new THREE.Scene();
 /**
  * Objects
  */
+const planeWidthSegments = getPathParams.width || PLANE_WIDTH_SEGMENTS;
+const planeHeightSegments = getPathParams.height || PLANE_HEIGHT_SEGMENTS;
 const planeGeometry = createPlaneGeometry(
-  PLANE_WIDTH_SEGMENTS,
-  PLANE_HEIGHT_SEGMENTS
+  planeWidthSegments,
+  planeHeightSegments
 );
 
 applyAllTexture(material, planeGeometry);
@@ -66,6 +68,7 @@ const gui = createGUI(scene, planeMesh);
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
+renderer.setClearColor(0xffffff, 1);
 
 renderer.setSize(sizes.width, sizes.height);
 

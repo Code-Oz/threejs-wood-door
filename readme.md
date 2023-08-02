@@ -2,6 +2,15 @@
 
 Demo [here](https://nimble-stroopwafel-0b8154.netlify.app/)
 
+## Set width & height segments
+
+You can set the width & height number of segments of the door by passing it query url value.
+
+`/?width=2&height=2#debug`
+`/?width=15&height=15#debug`
+
+Default value are 100.
+
 ## Setup
 
 Download [Node.js](https://nodejs.org/en/download/).
