@@ -26,5 +26,7 @@ export const createGUI = (scene, planeMesh) => {
   createNormalDebugGUI(gui, planeMesh);
   createDisplacementMapDebugGUI(gui, planeMesh);
 
+  gui.add(planeMesh.material, "wireframe").name("wireframe");
+
   return gui;
 };
