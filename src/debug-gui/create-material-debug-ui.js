@@ -1,5 +1,4 @@
-import * as THREE from "three";
-import { DEFAULT_NORMAL_SCALE, DEFAULT_FACE } from "../config";
+import { DEFAULT_NORMAL_SCALE } from "../config";
 
 export const createAoMapIntensityDebugGUI = (gui, mesh) => {
   const folder = gui.addFolder("material");
